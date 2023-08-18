@@ -1,4 +1,59 @@
-const slider = document.querySelector('.slider');
-slider.addEventListener('change', () => {
-slider.classList.toggle('light-mode');
+// Переключение тёмной и светлой темы
+
+// Условие задачи
+// Задача заключается в создании функционала, который позволяет пользователю переключаться между светлой и темной темами на веб-странице. Когда пользователь нажимает на переключатель темы, вызывается функция, которая меняет класс у body элемента на странице, в результате чего происходит изменение внешнего вида страницы - светлая тема меняется на темную и наоборот.
+
+// Процесс реализации
+
+// В DOM-дереве найти элемент, который отвечает за переключение темы
+// К найденному элементу добавить обработчик события для переключения темы
+// Написать логику обработчика события
+
+//Решение=========================================
+
+const slider = document.querySelector('.slider');//Обозначили нужный нас раздел html в разметке html 
+//с помощью querySelector
+
+const body = document.querySelector('body');
+
+body.addEventListener('change', () => {//Ловим событие change с помощью addEventListener
+
+body.classList.toggle('light-mode');// Добавили класс light-mode элементу input, 
+//если этого класса не было, или удаляем - если он был
 });
+
+//Решение эксперта=======================================
+
+// Найти элемент, который отвечает за переключение
+// const checkbox = document.querySelector('#checkbox');
+// Найти боди для того, чтобы установить класс и переключить цвет
+// const body = document.querySelector('body');
+
+// Навесить обработчик для переключения цвета
+// checkbox.addEventListener('change', () => {
+//     body.classList.toggle("light-mode");
+// })
+
+// Второй вариант============================================
+// checkbox.onchange = () =>  body.classList.toggle("dark-mode");
+
+
+
+//==============onclick - событие click==========================
+
+//let body = document.getElementsByTagName('body');//создали переменную body
+
+// body.onclick = () => { //Вызов функции после действия пользователя?
+
+// //Метод contains()возвращает значение true, если узел является потомком узла.
+// //Метод contains()возвращает, falseесли нет.
+// if(body.classList.contains('light-mode')) {
+
+// //Метод remove()удаляет элемент (или узел) из документа.
+// body.classList.remove('light-mode');
+
+// } else {
+// body.classList.add('light-mode');//Добавляем нужный класс
+
+// }
+// }
